@@ -70,7 +70,6 @@ app.get('/', (req, res) => {
   `);
 });
 
-
 app.get('/help', (req, res) => {
   res.send(`
     <!DOCTYPE html>
@@ -114,6 +113,14 @@ app.get('/help', (req, res) => {
             border-radius: 4px;
             color: #fff;
             font-weight: bold;
+          }
+          pre {
+            background-color: #2a2a2a;
+            color: #eee;
+            padding: 12px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-top: 10px;
           }
           .highlight {
             margin-top: 40px;
@@ -160,6 +167,21 @@ app.get('/help', (req, res) => {
         <div class="section">
           <h2><code>/api/users/:id</code></h2>
           <p>This route returns data for a specific user by their ID. <br>Useful for retrieving individual user details. <br><strong>Note:</strong> Also a <strong>protected route</strong>; requires valid authentication.</p>
+        </div>
+
+        <div class="section">
+          <h2>Input Fields for Requests</h2>
+          <p><strong>Register Request Body:</strong></p>
+          <pre>{
+  "fullName": "Your Name",
+  "email": "your@email.com",
+  "password": "yourpassword"
+}</pre>
+          <p><strong>Login Request Body:</strong></p>
+          <pre>{
+  "email": "your@email.com",
+  "password": "yourpassword"
+}</pre>
         </div>
 
         <div class="section">
