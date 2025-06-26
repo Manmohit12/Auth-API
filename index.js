@@ -115,6 +115,15 @@ app.get('/help', (req, res) => {
             color: #fff;
             font-weight: bold;
           }
+          .highlight {
+            margin-top: 40px;
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-left: 5px solid #00bcd4;
+            border-radius: 6px;
+            color: #f0f0f0;
+            font-size: 1.1rem;
+          }
           footer {
             margin-top: 50px;
             text-align: center;
@@ -158,6 +167,11 @@ app.get('/help', (req, res) => {
           <p>This API uses <strong>JWT (JSON Web Token)</strong> authentication. <br>Your <strong>password is securely encrypted</strong> in our database. <br>We cannot view your password, ensuring your data stays private and secure.</p>
         </div>
 
+        <div class="highlight">
+          ⚠️ <strong>Important:</strong> Make sure you add the <code>Authorization</code> header with your generated token to access protected routes. <br>
+          Example: <code>Authorization: your_jwt_token_here</code>
+        </div>
+
         <footer>
           Owner of the API: <strong>Manmohit Singh</strong><br>
           <a href="https://www.linkedin.com/in/manmohit-singh-967990281/" target="_blank">
@@ -168,6 +182,8 @@ app.get('/help', (req, res) => {
     </html>
   `);
 });
+
+
 
 
 app.listen(PORT, () => {
