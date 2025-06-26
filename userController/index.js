@@ -56,4 +56,14 @@ const getUsers = async (req, res) => {
     }
 };
 
-export { registerUser, loginUser, getUsers };   
+const handleGetUserById=async(req,res)=>{
+    try {
+        const user = await UserModel.findById(req.params.id);
+        if (!user) return res.status(404).json({ msg: 'User not found' });
+        res.json(user);
+    } catch (error) {
+        res.status(500).json({ msg: "Server error" });
+    }
+}
+
+export { registerUser, loginUser, getUsers, handleGetUserById };   
