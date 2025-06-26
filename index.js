@@ -145,7 +145,12 @@ app.get('/help', (req, res) => {
 
         <div class="section">
           <h2><code>/api/users</code></h2>
-          <p>This route provides data of registered users. <br><strong>Note:</strong> This is a <strong>protected route</strong>, and you must be registered to access it.</p>
+          <p>This route provides data of all registered users. <br><strong>Note:</strong> This is a <strong>protected route</strong>, and you must be registered to access it.</p>
+        </div>
+
+        <div class="section">
+          <h2><code>/api/users/:id</code></h2>
+          <p>This route returns data for a specific user by their ID. <br>Useful for retrieving individual user details. <br><strong>Note:</strong> Also a <strong>protected route</strong>; requires valid authentication.</p>
         </div>
 
         <div class="section">
@@ -163,6 +168,7 @@ app.get('/help', (req, res) => {
     </html>
   `);
 });
+
 
 app.listen(PORT, () => {
   console.log(` Server started at port: ${PORT}`);
